@@ -1,0 +1,108 @@
+# APS Glossary
+
+- **APS**: Autodesk Platform Services (formerly Forge)
+- **ACC**: Autodesk Construction Cloud
+- **BIM 360**: Legacy construction management platform (predecessor to ACC)
+- **MD**: Model Derivative API — translates design files into viewable formats (SVF/SVF2)
+- **DM**: Data Management API — manages files, folders, and storage (OSS, BIM 360, ACC hubs)
+- **URN**: Base64-encoded resource identifier used across APS APIs
+- **SVF/SVF2**: Scalable Viewing Format — optimized 3D web viewing format produced by Model Derivative and consumed exclusively by the APS Viewer SDK, similar concept to glTF format with openCTM compression
+- **OSS**: Object Storage Service — APS cloud storage for uploading design files
+- **Webhook**: Server-to-server callback triggered by APS events (e.g., model translation complete)
+- **2LO/3LO**: Two-legged / three-legged OAuth authentication flows
+- **Hub**: Top-level container in Data Management (maps to an ACC or BIM 360 account)
+- **Manifest**: Translation status and output metadata from Model Derivative
+
+- **ACAD**: AutoCAD — Autodesk's flagship 2D/3D CAD drafting software (produces .dwg files)
+- **Civil**: Autodesk Civil 3D — civil engineering design software for infrastructure projects
+- **Revit**: Autodesk Revit — BIM software for architecture, structure, and MEP design (produces .rvt files)
+- **Build**: Autodesk Build — construction management module within ACC (field management, cost, etc.)
+- **IFC**: Industry Foundation Classes — open standard file format for BIM data exchange between tools
+- **RFI**: Request for Information — formal question submitted during construction, tracked in ACC/BIM 360
+- **SSA**: Secure Service Accounts — service-level authentication for server-to-server APS access
+- **AEC**: Architecture, Engineering, and Construction — the industry vertical APS primarily serves
+- **AECDM**: AEC Data Model API — unified API for accessing design and construction data across ACC
+- **DX**: Data Exchange — API for exchanging design data between applications in a neutral format
+- **Auth**: Authentication — APS OAuth flows including 2LO, 3LO, PKCE, PAT (Personal Access Tokens), and SSA
+
+## APS Documentation URL Structure
+
+APS docs are served behind a CDN with a path key (`bPlouYTd`). Each API source has a
+JSON Table-of-Contents (TOC) and corresponding HTML pages:
+
+- **TOC JSON**: `https://developer.doc.config.autodesk.com/bPlouYTd/{source}.json`
+  where `{source}` is a source ID from the table below (e.g. `acc_v1.json`, `data_v2.json`)
+- **Static HTML pages**: `https://developer.doc.autodesk.com/bPlouYTd/{path_from_toc}`
+  (these are the CDN-hosted pages referenced in each TOC JSON's `source` field)
+- **APS Portal page**: the human-readable documentation on `aps.autodesk.com` (JavaScript SPA)
+
+Source IDs, their API titles, and portal URLs:
+
+| Source ID | API Title | Portal URL |
+|---|---|---|
+| `acc_v1.json` | Autodesk Construction Cloud APIs | https://aps.autodesk.com/en/docs/acc/v1/overview/introduction/ |
+| `aecdatamodel_v1.json` | AEC Data Model API | https://aps.autodesk.com/en/docs/aecdatamodel/v1/developers_guide/overview/ |
+| `applications_v1.json` | Application Management API | https://aps.autodesk.com/en/docs/applications/v1/developers_guide/overview/ |
+| `bim360_v1.json` | BIM 360 API | https://aps.autodesk.com/en/docs/bim360/v1/overview/introduction/ |
+| `buildingconnected_v2.json` | BuildingConnected & TradeTapp APIs | https://aps.autodesk.com/en/docs/buildingconnected/v2/developers_guide/overview/ |
+| `data_v2.json` | Data Management API | https://aps.autodesk.com/en/docs/data/v2/developers_guide/overview/ |
+| `dataviz_v1.json` | Data Visualization | https://aps.autodesk.com/en/docs/dataviz/v1/developers_guide/examples/ |
+| `design-automation_v3.json` | Automation API | https://aps.autodesk.com/en/docs/design-automation/v3/developers_guide/overview/ |
+| `dx-sdk-beta_v7.2.0.json` | Data Exchange .NET SDK v7.2.0 | https://aps.autodesk.com/en/docs/dx-sdk-beta/v7.2.0/developers_guide/overview/ |
+| `fdxgraph_v1.json` | Data Exchange GraphQL | https://aps.autodesk.com/en/docs/fdxgraph/v1/reference/graphql_endpoint/ |
+| `flow_graph_engine_v1.json` | Flow Graph Engine | https://aps.autodesk.com/en/docs/flow_graph_engine/v1/developers_guide/overview/ |
+| `forma_v1.json` | Forma API (Beta) | https://aps.autodesk.com/en/docs/forma/v1/developers_guide/overview/ |
+| `informed-design_v1.json` | Informed Design API (Beta) | https://aps.autodesk.com/en/docs/informed-design/v1/developers-guide/overview/ |
+| `insights_v1.json` | Business Success Plan Reporting API | https://aps.autodesk.com/en/docs/insights/v1/developers_guide/overview/ |
+| `mfgdataapi_v3.json` | Manufacturing Data Model API | https://aps.autodesk.com/en/docs/mfgdataapi/v3/developers_guide/overview/ |
+| `model-derivative_v2.json` | Model Derivative API | https://aps.autodesk.com/en/docs/model-derivative/v2/developers_guide/overview/ |
+| `oauth_v2.json` | Authentication API | https://aps.autodesk.com/en/docs/oauth/v2/developers_guide/overview/ |
+| `parameters_v1.json` | Parameters API | https://aps.autodesk.com/en/docs/parameters/v1/overview/introduction/ |
+| `profile_v2.json` | User Profile API | https://aps.autodesk.com/developer/overview/user-profile-api |
+| `ssa_v1.json` | Secure Service Account API | https://aps.autodesk.com/en/docs/ssa/v1/developers_guide/overview/ |
+| `sustainability_v3.json` | Sustainability Data API | https://aps.autodesk.com/en/docs/sustainability/v3/developers_guide/overview/ |
+| `tandem_v1.json` | Tandem Data | https://aps.autodesk.com/en/docs/tandem/v1/developers_guide/overview/ |
+| `tokenflex_v1.json` | Token Flex Usage Data API | https://aps.autodesk.com/en/docs/tokenflex/v1/developers_guide/overview/ |
+| `vaultdataapi_v2.json` | Vault Data API | https://aps.autodesk.com/en/docs/vaultdataapi/v2/developers_guide/overview/ |
+| `viewer_v7.json` | Viewer | https://aps.autodesk.com/en/docs/viewer/v7/developers_guide/ |
+| `webhooks_v1.json` | Webhooks API | https://aps.autodesk.com/en/docs/webhooks/v1/developers_guide/overview/ |
+
+To construct a reference link from search results, use the `source` metadata field with the
+base URL. For example, a chunk with `source: webhooks_v1` means its TOC is at
+`https://developer.doc.config.autodesk.com/bPlouYTd/webhooks_v1.json` and its HTML pages
+are under `https://developer.doc.autodesk.com/bPlouYTd/webhooks_v1/`.
+
+### Converting a Static CDN URL to an APS Portal URL
+
+The static CDN pages can be mapped back to the original APS portal (the JavaScript SPA
+at `aps.autodesk.com`). This is useful for generating clickable links that open in a
+browser with full navigation.
+
+A static CDN URL looks like:
+`https://developer.doc.autodesk.com/bPlouYTd/{repo-slug}/{api-name}/{version}/{path}/{page}.html`
+
+For example:
+- `https://developer.doc.autodesk.com/bPlouYTd/A360-platform-viewing-docs-master-633741/model-derivative/v2/reference/http/model-derivative/formats-GET.html`
+- `https://developer.doc.autodesk.com/bPlouYTd/design-automation-forge-doc-master-636116/design-automation/v3/reference/http/design-automation/activities-GET.html`
+
+To convert to a portal URL:
+
+1. **Strip the repo-slug** — the first path segment after `bPlouYTd/`. It always has a
+   numeric suffix (e.g. `A360-platform-viewing-docs-master-633741`).
+2. **The api-name is the next segment** — e.g. `model-derivative`, `design-automation`.
+3. **Remove any duplicate api-name** — the api-name sometimes appears again deeper in the
+   path (right before the page filename). If it does, remove that duplicate folder.
+4. **Strip `.html`** from the page filename and add a trailing `/`.
+5. **Prepend** `https://aps.autodesk.com/en/docs/`.
+
+Examples:
+
+| Static CDN path (after `bPlouYTd/`) | Portal URL |
+|---|---|
+| `…-633741/model-derivative/v2/reference/http/model-derivative/formats-GET.html` | `https://aps.autodesk.com/en/docs/model-derivative/v2/reference/http/formats-GET/` |
+| `…-636116/design-automation/v3/reference/http/design-automation/activities-GET.html` | `https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-GET/` |
+| `…-633590/aecdatamodel/v1/developers_guide/overview.html` | `https://aps.autodesk.com/en/docs/aecdatamodel/v1/developers_guide/overview/` |
+
+Note: the duplicate api-name folder does not always exist — simpler paths like
+`aecdatamodel/v1/developers_guide/overview.html` have no duplicate. Only remove it
+if the api-name appears as a path segment again after `{version}/`.
